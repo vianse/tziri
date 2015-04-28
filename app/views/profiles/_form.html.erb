@@ -1,4 +1,33 @@
+<style type="text/css">
+ .row{
+  margin-top: 120px;
+}
+h6{
+  font-size: 20px!important;
+  color: white!important;
+}
+h6.a{
+  color:hsl(210, 29%, 29%)!important;
+}
+.boton{
+  background-color: #16A085!important;
+  border-color: #16A085!important;
+  color: white!important;
+}
+
+.boton:hover{
+  background-color: #1ABC9C!important;
+  border-color: #1ABC9C!important;
+  color: white!important;
+}
+.panel{
+  background-color: hsl(210, 29%, 29%)!important;
+
+}
+
+</style>
 <div class="row">
+  <div class="panel">
 <%= form_for(@profile) do |f| %>
   <% if @profile.errors.any? %>
     <div id="error_explanation">
@@ -13,22 +42,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+    <h6>Nombre: </h6>
+    <%= f.text_field :nombre,  :required => true %>
   </div>
   <div class="field">
-    <%= f.label :puesto %><br>
-    <%= f.text_field :puesto %>
+   <h6>Puesto: </h6>
+    <%= f.text_field :puesto,  :required => true %>
   </div>
   <div class="field">
-    <%= f.label :movil %><br>
-    <%= f.text_field :movil %>
+    <h6>Movil: </h6>
+    <%= f.text_field :movil,  :required => true%>
   </div>
   
     <%= f.hidden_field :user_id, :value => current_user.id %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar", :class => "boton" %>
   </div>
 <% end %>
+</div>
 </div>
