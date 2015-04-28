@@ -1,0 +1,46 @@
+<style type="text/css">
+ .row{
+ 	margin-top: 150px;
+}
+.boton{
+  background-color: #16A085!important;
+  border-color: #16A085!important;
+  color: white!important;
+}
+
+.boton:hover{
+  background-color: #1ABC9C!important;
+  border-color: #1ABC9C!important;
+  color: white!important;
+}
+.panel{
+  background-color: hsl(210, 29%, 29%)!important;
+  text-align: center!important;
+
+}
+h6{
+  font-size: 20px!important;
+  color: white!important;
+}
+input{
+  width: 45%!important;
+  text-align: center!important;
+  font-size: 20px!important;
+  color: hsl(210, 29%, 29%)!important;
+}
+</style>
+<div class="row">
+  <div class="panel">
+    	<h6> Ingresa el codigo de verificación y participa en este evento</h6>
+    	<%= form_tag :controller => 'checkins', :action => 'validacion', :method => 'post' do %>
+      <div class="field">
+        <%= text_field_tag :code, nil, :value => nil ,:class => 'form-control tamano' %>
+      </div>
+      <div class="field">
+      
+        <%= hidden_field_tag :phone_number, nil, :value => "+525548225097" ,:class => 'form-control tamano' %>
+      </div>
+      <%= submit_tag "Verificar", :class => "boton" %>
+    <% end %>
+  </div>
+</div>

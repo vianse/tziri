@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo evento:</strong>
+  <%= @checkin.codigo_evento %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @checkin.nombre %>
+</p>
+
+<p>
+  <strong>Puesto:</strong>
+  <%= @checkin.puesto %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @checkin.correo %>
+</p>
+
+<p>
+  <strong>Nombre evento:</strong>
+  <%= @checkin.nombre_evento %>
+</p>
+
+<%= link_to 'Edit', edit_checkin_path(@checkin) %> |
+<%= link_to 'Back', checkins_path %>

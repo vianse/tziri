@@ -1,0 +1,36 @@
+<style type="text/css">
+.row{
+ 	margin-top: 150px;
+}
+.button.button-success.button-cons{
+  background-color: #16A085!important;
+  border-color: #16A085!important;
+  color: white!important;
+}
+.button.button-success.button-cons:hover{
+ background-color: #1ABC9C!important;
+  border-color: #1ABC9C!important;
+  color: white!important;
+}
+.panel{
+  background-color: hsl(210, 29%, 29%)!important;
+  text-align: center!important;
+
+}
+h6{
+  font-size: 20px!important;
+  color: white!important;
+}
+input{
+  width: 45%!important;
+  text-align: center!important;
+  font-size: 20px!important;
+  color: hsl(210, 29%, 29%)!important;
+}
+</style>
+<div class="row">
+	<div class="panel">
+	  <h6>Error, el evento ingresado no existe, intentalo con otro número</h6>
+	  <%= link_to 'Aceptar', "/checkins/new", :class => "button button-success button-cons" %>
+  </div>
+</div>

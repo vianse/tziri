@@ -1,0 +1,32 @@
+<style type="text/css">
+ .row{
+ 	margin-top: 150px;
+}
+
+.button.button-success.button-cons{
+  background-color: #16A085!important;
+  border-color: #16A085!important;
+  color: white!important;
+}
+.button.button-success.button-cons:hover{
+ background-color: #1ABC9C!important;
+  border-color: #1ABC9C!important;
+  color: white!important;
+}
+.panel{
+  background-color: hsl(210, 29%, 29%)!important;
+  text-align: center!important;
+
+}
+h6{
+  font-size: 20px!important;
+  color: white!important;
+}
+
+</style>
+<div class="row">
+	<div class="panel">
+	<h6> El evento "<strong><%= @evento %></strong>" ha sido creado satisfactoriamente, <span>comparte este evento con el siguiente número: <strong><%= @numero %></strong></span></h6>
+  <%= link_to 'Aceptar', "/eventos/new", :class => "button button-success button-cons" %>
+  </div>
+</div>

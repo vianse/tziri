@@ -1,0 +1,22 @@
+<style type="text/css">
+ .row{
+ 	margin-top: 150px;
+ 	margin-left: 15%;
+ 	margin-right: 15%;
+ }
+</style>
+<div class="row">
+	<h2> Ingresa el codigo de verificación y participa en este evento</h2>
+	<%= form_tag :controller => 'checkins', :action => 'validacion', :method => 'post', :event => params[:event] do %>
+  <div class="field">
+    <%= label_tag "Ingresa el codigo verificación" %><br>
+    <%= text_field_tag :code, nil, :value => "nil" ,:class => 'form-control tamano' %>
+  </div>
+  <div class="field">
+  
+    <%= text_field_tag :phone_number, nil, :value => "+525548225097" ,:class => 'form-control tamano' %>
+
+  </div>
+  <%= submit_tag "Verificar", :class => "btn btn-success btn-cons" %>
+<% end %>
+</div>

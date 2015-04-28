@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Juntas</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/estilo.css">
+  
+</head>
+<style type="text/css">
+  .nav-anchor{
+    font-size:16px!important;
+    font-weight:700!important;
+    color: hsl(210, 29%, 29%)!important;
+  }
+
+  .brand{
+    height: 53px!important;
+    font-size: 30px!important;
+    font-weight: 700!important;
+    line-height: 1.042!important;
+
+  }
+  .i{
+    color: hsl(194, 64%, 55%)!important;
+  }
+</style>
+<body>
+
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+<%= yield %>
+
+<nav data-layout-element="navigation">
+    <section>
+        <a href="/" class="brand">
+          tzir<span class="i">i</span>
+        </a>
+       
+      <ul class="nav-list">
+             <% if user_signed_in? %>
+            <li class="nav-item ">
+              <a class="nav-anchor" href="/">Que deseas hacer?</a>
+            </li>
+     
+            <li class="nav-item ">
+              <a class="nav-anchor" href="#" alt="Usuario actual"><%= current_user.email %></a>
+            </li>
+            <li class="nav-item nav-item-sign-in">
+   			 <%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"signout"  %></li>
+  			<% end %>
+            
+      </ul>
+    </section>
+  </nav>
+
+</body>
+</html>

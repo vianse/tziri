@@ -1,0 +1,72 @@
+<style type="text/css">
+ h6{
+  font-size: 20px!important;
+  color: white!important;
+  text-align: center!important;
+}
+input{
+  width: 45%!important;
+  margin-left: 28%!important;
+  margin-right: 30%!important;
+}
+.boton{
+  background-color: #16A085!important;
+  border-color: #16A085!important;
+  color: white!important;
+}
+
+.boton:hover{
+  background-color: #1ABC9C!important;
+  border-color: #1ABC9C!important;
+  color: white!important;
+}
+.panel{
+  background-color: hsl(210, 29%, 29%)!important;
+
+}
+.font{
+  text-align: center!important;
+  font-size: 20px!important;
+  color: hsl(210, 29%, 29%)!important;
+}
+
+
+
+</style>
+<div class="row">
+    <%= form_for(@checkin) do |f| %>
+      <% if @checkin.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@checkin.errors.count, "error") %> prohibited this checkin from being saved:</h2>
+
+          <ul>
+          <% @checkin.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <div class="panel">
+      <div class="field">
+        <h6>Ingresa el número del evento</h6>
+        <%= f.text_field :codigo_evento, :name => "codigo_evento", :required => true,:class => "font"  %>
+      </div>
+      <div class="field">
+        <%= f.hidden_field :nombre,:name => "nombre", :value => @nombre %>
+      </div>
+      <div class="field">
+        <%= f.hidden_field :puesto,:name => "puesto", :value => @puesto %>
+      </div>
+      <div class="field">
+        <%= f.hidden_field :correo,:name => "correo", :value => @email %>
+      </div>
+      <div class="field">
+        <%= f.hidden_field :nombre_evento,:name => "nombre_evento", :value => "2" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Checkin", :class=>"boton" %>
+      </div>
+      <h6>Le será enviado un SMS con tú código de participación</h6>
+    <% end %>
+  </div>
+</div>

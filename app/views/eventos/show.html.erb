@@ -1,0 +1,82 @@
+<style type="text/css">
+.row{
+		margin-top: 90px!important;
+
+	}
+li.student-card-list-item{
+
+   margin-left: auto!important;
+   margin-right: auto !important;
+   width: 100%;
+  }
+div.twelve.columns{
+  margin-bottom: 10px!important;
+  margin-top: 0px!important;
+}
+.student-card{
+  margin-bottom: 0px!important;
+  margin-top: 0px!important;
+}
+.student-card-list{
+  margin: 0px!important;
+}
+.student-card-puesto{
+  float: right;
+}
+.panel{
+  background-color: hsl(210, 29%, 29%)!important;
+
+}
+.label{
+  font-size: 22px!important;
+  color: white!important;
+  font-weight: 700!important;
+  line-height: 
+
+}
+ .evento{
+ 	font-size: 20px!important;
+ }
+
+.blanco{
+	color: white!important;
+	font-size: 20px!important;
+}
+
+
+</style>
+
+<div class="row"> 
+	<div class="panel">
+  
+    <span class="label">Nombre del evento: </span><span class="blanco"><%= @evento.nombre %></span><br><br>
+  	<strong class="label">Codigo: </strong><label class="blanco"><%= @evento.codigo %></label>
+  	
+  
+</div>
+
+<div class="panel1">
+	<h4>Listado de Participantes</h4>
+
+
+	 <% @evento.checkins.each do |checkin| %>
+			<div class="twelve columns">
+			            <ul class="student-card-list initial-list">
+			                <li class="student-card-list-item">
+			                  <a class="student-card" href="#">
+			                    <h4 class="student-card-name"><%= checkin.nombre %>
+			                    	 <span class="student-card-puesto">Puesto: <%= checkin.puesto %></span>
+			                    </h4>
+			                     <span class="student-card-correo">Correo: <%= checkin.correo  %></span>
+			                   
+			                  </a>
+			                </li>
+			            </ul>
+			    </div>
+			   
+    <% end %>
+
+
+</div>
+</div>
+

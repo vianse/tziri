@@ -1,0 +1,100 @@
+<style type="text/css">
+li.student-card-list-item{
+
+   margin-left: auto!important;
+   margin-right: auto !important;
+   width: 100%;
+  }
+div.twelve.columns{
+  margin-bottom: 10px!important;
+  margin-top: 0px!important;
+}
+.student-card{
+  margin-bottom: 0px!important;
+  margin-top: 0px!important;
+}
+.student-card-list{
+  margin: 0px!important;
+}
+h6{
+  font-size: 20px!important;
+  color: white!important;
+}
+h6.a{
+  color:hsl(210, 29%, 29%)!important;
+}
+.boton{
+  background-color: #16A085!important;
+  border-color: #16A085!important;
+  color: white!important;
+}
+
+.boton:hover{
+  background-color: #1ABC9C!important;
+  border-color: #1ABC9C!important;
+  color: white!important;
+}
+.panel{
+  background-color: hsl(210, 29%, 29%)!important;
+
+}
+
+
+</style>
+<link rel="stylesheet" type="text/css" href="/assets/estilo.css">
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class ="panel">
+  <%= form_for(@evento) do |f| %>
+  <% if @evento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@evento.errors.count, "error") %> prohibited this evento from being saved:</h2>
+
+      <ul>
+      <% @evento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <h6>Nombre del evento</h6>
+    <%= f.text_field :nombre, :name => "name",:placeholder=> "ejemplo: Junta de seguimiento", :required => true %>
+  </div>
+  <div class="field">
+    <h6>Código del evento</h6>
+    <%= f.text_field :codigo, :name => "code", :value => @codigo, :readonly => "true" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Crear", :class => "boton" %>
+  </div>
+<% end %>
+
+</div>
+</div>
+<div class="row">
+<h6 class="a">Mis eventos</h6>
+<% if @eventos.nil? %>
+<% else %>
+<% @eventos.each do |evento| %>
+    <div class="twelve columns">
+            <ul class="student-card-list initial-list">
+                <li class="student-card-list-item">
+                  <a class="student-card" href="<%= evento.id %>">
+                    <h4 class="student-card-name"><%= evento.nombre %></h4>
+                    <span class="student-card-location">Codigo <%= evento.codigo %></span>
+                     <span class="student-card-location">Participantes <%= evento.checkins.count %></span>
+                  </a>
+                </li>
+            </ul>
+    </div>
+<% end %>
+<% end %>
+</div>

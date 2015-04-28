@@ -1,0 +1,100 @@
+<style type="text/css">
+.button.primary.features-toggle-anchor{
+	background-color: #16A085!important;
+	border-color: #16A085!important;
+}
+
+.button.primary.features-toggle-anchor:hover{
+	background-color: #1ABC9C!important;
+	border-color: #1ABC9C!important;
+}
+.button.features-toggle-anchor{
+	background-color: #2C3E50!important;
+	border-color: #2C3E50!important;
+	color: white!important;
+}
+
+.button.features-toggle-anchor:hover{
+	background-color: #34495E!important;
+	border-color: #34495E!important;
+	color: white!important;
+}
+
+h1{
+	color:white!important;
+	font-size: 53px!important;
+}
+.verde{
+	color: #1ABC9C!important;
+}
+.row{
+	margin-top: 15%!important;
+}
+.panel{
+	text-align: center!important;
+	background-color: transparent!important;
+}
+
+video { 
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+ background: url('http://demosthenes.info/assets/images/polina.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+.stopfade { 
+   opacity: .5;
+}
+	
+</style>
+<script type="text/javascript">
+var vid = document.getElementById("bgvid");
+var pauseButton = document.querySelector("#polina button");
+
+function vidFade() {
+  vid.classList.add("stopfade");
+}
+vid.addEventListener('ended', function()
+{
+// only functional if "loop" is removed 
+vid.pause();
+// to capture IE10
+vidFade();
+}); 
+
+
+pauseButton.addEventListener("click", function() {
+  vid.classList.toggle("stopfade");
+  if (vid.paused) {
+    vid.play();
+    pauseButton.innerHTML = "Pause";
+  } else {
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
+  }
+})
+
+</script>
+
+
+<video autoplay  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
+<source src="http://demosthenes.info/assets/videos/polina.webm" type="video/webm">
+<source src="http://demosthenes.info/assets/videos/polina.mp4">
+</video>
+
+ <div class="row">
+  <div class="panel">
+    <h1>Que deseas hacer?<span class="verde">..</span></h1>
+    <div class="features-toggle">
+      <a class="button primary features-toggle-anchor" href="/eventos/new">Crear evento</a>
+      <a class="button features-toggle-anchor" href="/checkins/new">
+      	Checkin</a>
+    </div>
+    </div>
+</div>
