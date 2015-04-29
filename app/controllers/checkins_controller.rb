@@ -99,10 +99,11 @@ class CheckinsController < ApplicationController
         });
         @checkin.save
         #redirect_to :controller => 'verifications', :action => 'generate_code', :phone_number => '+525548225097', :type => 'post'
-        phone_number = "+525548225097"
+        @telefono = Profile.where(:user_id.to_s => current_user.id.to_s).pluck(:movil)
+        phone_number = @telefono
         code = Random.rand(10000..99999).to_s
         Verification.create(phone_number: phone_number, code: code, movil: params[:correo], codigo_evento: params[:codigo_evento] )
-        #SinchSms.send('53c3f2a5-23e6-400c-8b56-442b67e7f442', '4i7JtsBJsEqex9B6W49+YA==', "Access code #{code}", phone_number)
+        SinchSms.send('53c3f2a5-23e6-400c-8b56-442b67e7f442', '4i7JtsBJsEqex9B6W49+YA==', "Access code #{code}", phone_number)
         #render status: 200, nothing: true
         redirect_to :action => 'error'
         #render status: 200, json: {existe: false}.to_json
