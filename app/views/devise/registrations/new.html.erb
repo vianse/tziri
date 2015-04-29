@@ -1,15 +1,73 @@
-<h2>Sign up</h2>
+<style type="text/css">
+ .row{
+  margin-top: 120px;
+}
+
+.button.button-success.button-cons{
+  background-color: #16A085!important;
+  border-color: #16A085!important;
+  color: white!important;
+}
+.button.button-success.button-cons:hover{
+ background-color: #1ABC9C!important;
+  border-color: #1ABC9C!important;
+  color: white!important;
+}
+.button.button-block.button-lg.button-warning{
+  background-color: hsl(48, 89%, 50%)!important;
+
+}
+.panel{
+  background-color: hsl(210, 29%, 29%)!important;
+  text-align: center!important;
+  width: 60%;
+  margin-left: 20%!important;
+
+}
+h6{
+  font-size: 28px!important;
+  color: white!important;
+ 
+}
+.i{
+    color: hsl(194, 64%, 55%)!important;
+  }
+
+.branda{
+    height: 53px!important;
+    font-size: 30px!important;
+    font-weight: 700!important;
+    line-height: 1.042!important;
+    color: white!important;
+   
+  }
+  
+
+  input{
+    width: 80%!important;
+  }
+ .label{
+  color: white!important;
+  font-size: 20px;
+  float: left!important;
+  margin-left: 10%!important;
+  margin-bottom: 2%!important;
+ }
+ 
+</style>
+<div class="row">
+<div class="panel">
+<h6>Sign up</h6>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
   <div class="field">
-    <%= f.label "Correo Empresarial" %><br />
+    <%= f.label "Correo Empresarial", :class=> "label" %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label "Contraseña", :class=> "label" %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -17,13 +75,14 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label "Confirmar password", :class=> "label" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
+  </div><br>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up",:class => "button button-success button-cons" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+</div>
+</div>
