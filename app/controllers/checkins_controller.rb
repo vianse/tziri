@@ -35,7 +35,7 @@ class CheckinsController < ApplicationController
 
 
   def index
-    @name = Profile.where(:user_id => current_user.id).count
+    @name = Profile.where(:user_id.to_s => current_user.id.to_s).count
     if @name != 0 
      @checkins = Checkin.all
     else
@@ -49,8 +49,8 @@ class CheckinsController < ApplicationController
   end
 
   def new
-    @nombre = Profile.where(:user_id => current_user.id).pluck(:nombre).first
-    @puesto = Profile.where(:user_id => current_user.id).pluck(:puesto).first
+    @nombre = Profile.where(:user_id.to_s => current_user.id.to_s).pluck(:nombre).first
+    @puesto = Profile.where(:user_id.to_s => current_user.id.to_s).pluck(:puesto).first
     @email = User.where(:id => current_user.id).pluck(:email).first
 
     @checkin = Checkin.new

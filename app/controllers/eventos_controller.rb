@@ -11,7 +11,7 @@ class EventosController < ApplicationController
   end
 
   def index
-    @name = Profile.where(:user_id => current_user.id).count
+    @name = Profile.where(:user_id.to_s => current_user.id.to_s).count
     if @name != 0 
      @eventos = Evento.all
     else
@@ -24,7 +24,7 @@ class EventosController < ApplicationController
   end
 
   def new
-    @eventos = Evento.where(:user_id => current_user.id).order(:id => :desc)
+    @eventos = Evento.where(:user_id.to_s => current_user.id.to_s).order(:id => :desc)
     @codigo = Random.rand(100000..999999).to_s
     @evento = Evento.new
     respond_with(@evento)
