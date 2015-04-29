@@ -1,6 +1,6 @@
 <style type="text/css">
  .row{
-  margin-top: 120px;
+  margin-top: 90px;
 }
 h6{
   font-size: 20px!important;
@@ -21,26 +21,21 @@ h6.a{
   color: white!important;
 }
 .panel{
-  background-color: hsl(210, 29%, 29%)!important;
+  background-color: hsl(210, 29%, 29%);
 
 }
+h5{
+  font-size: 28px!important;
+  color: hsl(210, 29%, 29%)!important;
+ 
+}
+
 
 </style>
 <div class="row">
+  <h5>Perfil</h5>
   <div class="panel">
 <%= form_for(@profile) do |f| %>
-  <% if @profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
-
-      <ul>
-      <% @profile.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="field">
     <h6>Nombre: </h6>
     <%= f.text_field :nombre,  :required => true %>
@@ -49,11 +44,14 @@ h6.a{
    <h6>Puesto: </h6>
     <%= f.text_field :puesto,  :required => true %>
   </div>
+    <div class="field">
+    <h6>Empresa: </h6>
+    <%= f.text_field :empresa,  :required => true%>
+  </div>
   <div class="field">
     <h6>Movil: </h6>
-    <%= f.text_field :movil,  :required => true%>
+    <%= f.text_field :movil, :required => true, :placeholder => "+52claveladanumeromovil ejemplo +525500000000"%>
   </div>
-  
     <%= f.hidden_field :user_id, :value => current_user.id %>
 
   <div class="actions">

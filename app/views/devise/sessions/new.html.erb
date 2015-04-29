@@ -119,7 +119,6 @@ h6{
     </div>
   <% end %>
 
-
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
   <%= link_to "Recupera tu password?", new_password_path(resource_name),:class => "recover" %><br />
  <% end -%>
