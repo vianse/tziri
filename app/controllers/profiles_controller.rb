@@ -23,7 +23,7 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     @profile.save
-    respond_with(@profile)
+    redirect_to :controller => 'home' ,:action => 'index'
   end
 
   def update
