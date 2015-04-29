@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150429163904) do
+ActiveRecord::Schema.define(version: 20150429171700) do
 
   create_table "checkins", force: true do |t|
     t.string   "codigo_evento"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150429163904) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "evento_id"
+    t.string   "empresa"
   end
 
   create_table "eventos", force: true do |t|

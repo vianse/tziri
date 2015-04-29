@@ -8,6 +8,7 @@ li.student-card-list-item{
    margin-left: auto!important;
    margin-right: auto !important;
    width: 100%;
+   height: auto!important;
   }
 div.twelve.columns{
   margin-bottom: 10px!important;
@@ -16,6 +17,7 @@ div.twelve.columns{
 .student-card{
   margin-bottom: 0px!important;
   margin-top: 0px!important;
+  height: 120px!important;
 }
 .student-card-list{
   margin: 0px!important;
@@ -25,6 +27,7 @@ div.twelve.columns{
 }
 .panel{
   background-color: hsl(210, 29%, 29%)!important;
+
 
 }
 .label{
@@ -43,7 +46,9 @@ div.twelve.columns{
 	font-size: 20px!important;
 }
 
-
+a{
+	color:  hsl(210, 29%, 29%)!important;
+}
 </style>
 
 <div class="row"> 
@@ -65,10 +70,10 @@ div.twelve.columns{
 			                <li class="student-card-list-item">
 			                  <a class="student-card" href="#">
 			                    <h4 class="student-card-name"><%= checkin.nombre %>
-			                    	 <span class="student-card-puesto">Puesto: <%= checkin.puesto %></span>
+			                    	 <span class="student-card-puesto">Empresa: <%= checkin.empresa %></span>
 			                    </h4>
-			                     <span class="student-card-correo">Correo: <%= checkin.correo  %></span>
-			                     <span class="student-card-empresa">Correo: <%= checkin.empresa  %></span>
+			                     <span class="student-card-correo">Correo: <%= checkin.correo  %></span><br>
+			                     <span class="student-card-empresa">Puesto: <%= checkin.puesto  %></span>
 			                   
 			                  </a>
 			                </li>

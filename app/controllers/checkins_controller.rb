@@ -64,6 +64,7 @@ class CheckinsController < ApplicationController
     @codigo = params[:codigo_evento] 
     @evento_id = Evento.where(:codigo => params[:codigo_evento]).pluck(:id).first
     logger.debug @evento_id
+    @empresa = Profile.where(:user_id.to_s => current_user.id.to_s).pluck(:empresa).first
 
       #@checkin = Checkin.new(checkin_params)
       #@checkin.save
@@ -95,7 +96,8 @@ class CheckinsController < ApplicationController
         :puesto => params[:puesto],
         :correo => params[:correo],
         :nombre_evento => params[:nombre_evento],
-        :evento_id => @evento_id
+        :evento_id => @evento_id,
+        :empresa => @empresa
         });
         @checkin.save
         #redirect_to :controller => 'verifications', :action => 'generate_code', :phone_number => '+525548225097', :type => 'post'
