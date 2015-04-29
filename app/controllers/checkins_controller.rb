@@ -95,7 +95,7 @@ class CheckinsController < ApplicationController
         :puesto => params[:puesto],
         :correo => params[:correo],
         :nombre_evento => params[:nombre_evento],
-        :Evento_id => @evento_id
+        :evento_id => @evento_id
         });
         @checkin.save
         #redirect_to :controller => 'verifications', :action => 'generate_code', :phone_number => '+525548225097', :type => 'post'
