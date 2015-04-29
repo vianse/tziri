@@ -24,7 +24,7 @@ class EventosController < ApplicationController
   end
 
   def new
-    @eventos = Evento.where(:user_id.to_s => current_user.id.to_s)
+    @eventos = Evento.where(:user_id.to_s => current_user.id.to_s).order(:id => :desc)
     @codigo = Random.rand(100000..999999).to_s
     @evento = Evento.new
     respond_with(@evento)
