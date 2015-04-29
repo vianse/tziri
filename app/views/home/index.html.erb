@@ -21,7 +21,7 @@
 }
 
 h1{
-	color:white!important;
+	color:hsl(210, 29%, 29%)!important;
 	font-size: 53px!important;
 }
 .verde{
@@ -35,58 +35,10 @@ h1{
 	background-color: transparent!important;
 }
 
-video { 
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
- background: url('http://demosthenes.info/assets/images/polina.jpg') no-repeat;
-  background-size: cover;
-  transition: 1s opacity;
-}
-.stopfade { 
-   opacity: .5;
-}
+
 	
 </style>
-<script type="text/javascript">
-var vid = document.getElementById("bgvid");
-var pauseButton = document.querySelector("#polina button");
 
-function vidFade() {
-  vid.classList.add("stopfade");
-}
-vid.addEventListener('ended', function()
-{
-// only functional if "loop" is removed 
-vid.pause();
-// to capture IE10
-vidFade();
-}); 
-
-
-pauseButton.addEventListener("click", function() {
-  vid.classList.toggle("stopfade");
-  if (vid.paused) {
-    vid.play();
-    pauseButton.innerHTML = "Pause";
-  } else {
-    vid.pause();
-    pauseButton.innerHTML = "Paused";
-  }
-})
-
-</script>
-
-
-<video autoplay  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
-<source src="http://demosthenes.info/assets/videos/polina.webm" type="video/webm">
-<source src="http://demosthenes.info/assets/videos/polina.mp4">
-</video>
 
  <div class="row">
   <div class="panel">
