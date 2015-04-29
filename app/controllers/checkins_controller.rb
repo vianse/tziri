@@ -103,7 +103,7 @@ class CheckinsController < ApplicationController
         phone_number = @telefono.to_s
         code = Random.rand(10000..99999).to_s
         Verification.create(phone_number: phone_number, code: code, movil: params[:correo], codigo_evento: params[:codigo_evento] )
-        SinchSms.send('53c3f2a5-23e6-400c-8b56-442b67e7f442', '4i7JtsBJsEqex9B6W49+YA==', "Access code #{code}", phone_number)
+        #SinchSms.send('53c3f2a5-23e6-400c-8b56-442b67e7f442', '4i7JtsBJsEqex9B6W49+YA==', "Access code #{code}", phone_number)
         #render status: 200, nothing: true
         redirect_to :action => 'error'
         #render status: 200, json: {existe: false}.to_json
